@@ -1,0 +1,11 @@
+examples.new_page: # route name
+  path: /examples/{node} # url
+  defaults:
+    _controller: '\Drupal\examples\Controller\ExamplesController::content'
+    _title: 'Page 1'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node

@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * Implements hooks.
+ */
+
+
+ /**
+  * Implementing hook_preprocess_page.
+  *
+  * @param [type] $variables
+  * @return void
+  */
+// function examples_preprocess_page(&$variables) {
+//   // die("***");
+// }
+
+/**
+ * Implements hook_theme().
+ */
+function examples_theme() {
+  return [
+    'examples_welcome_block' => [
+      'variables' => [
+        'message' => NULL,
+        'result' => NULL,
+      ],
+    ],
+  ];
+}

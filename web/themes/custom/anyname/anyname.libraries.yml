@@ -1,0 +1,36 @@
+global:
+  version: 1.x
+  css:
+    theme:
+      css/global.css: {
+        preprocess: false
+      }
+  js:
+    js/global.js: {
+      preprocess: false
+      weight: 10
+    }
+
+  dependencies:
+    - core/jquery
+
+front:
+  version: 1.x
+  header: false
+  css:
+    theme:
+      css/front.css: {
+        weight: 9
+      }
+      https://maps.googleapis.com/maps/api/js?key=myownapikey&signed_in=true&libraries=drawing&callback=initMap:
+        type: external
+        attributes:
+          defer: true
+          async: true
+          data-test: map-link
+  js:
+    js/front.js: { preprocess: false }
+  dependencies:
+    - core/jquery
+
+
