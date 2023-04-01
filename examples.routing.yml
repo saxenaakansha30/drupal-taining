@@ -1,0 +1,27 @@
+examples.new_page: # route name
+  path: /examples/{node} # url
+  defaults:
+    _controller: '\Drupal\examples\Controller\ExamplesController::content'
+    _title: 'Page 1'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+examples.form_example:
+  path: /examples/sample-form
+  defaults:
+    _form: '\Drupal\examples\Form\SampleForm'
+    _title: 'Simple Form'
+  requirements:
+    _permission: 'access content'
+
+examples.settings:
+  path: '/admin/config/examples'
+  defaults:
+    _form: '\Drupal\examples\Form\ExamplesConfigurationForm'
+    _title: 'Examples Configuration'
+  requirements:
+    _permission: 'administer site configuration'

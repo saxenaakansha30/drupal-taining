@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * Implements hooks.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+ /**
+  * Implementing hook_preprocess_page.
+  *
+  * @param [type] $variables
+  * @return void
+  */
+// function examples_preprocess_page(&$variables) {
+//   // die("***");
+    //
+// }
+
+/**
+ * Implements hook_theme().
+ */
+function examples_theme() {
+  return [
+    'examples_welcome_block' => [
+      'variables' => [
+        'message' => NULL,
+        'result' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_forn_alter
+ *
+ *
+ * @param [type] $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param [type] $form_id
+ * @return void
+ */
+function examples_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'user_login_form') {
+      $form['name']['#title'] = t('Email');
+
+      // Callback functions.
+      $form['actions']['submit']['#submit'][] = 'examples_user_login_submit_handler';
+  }
+}
+
+function examples_user_login_submit_handler(&$form, FormStateInterface $form_state) {
+  dump($form_state);
+  die("hello");
+  // mailto: abc,ffsd fds fds
+  // Custom logic.
+}
