@@ -18,10 +18,10 @@ examples.form_example:
   requirements:
     _permission: 'access content'
 
-examples.settings:
+examples.admin_settings:
   path: '/admin/config/examples'
   defaults:
     _form: '\Drupal\examples\Form\ExamplesConfigurationForm'
-    _title: 'Examples Configuration'
+    _title: 'Examples configuration screen'
   requirements:
     _permission: 'administer site configuration'
